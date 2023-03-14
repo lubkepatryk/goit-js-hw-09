@@ -15,7 +15,7 @@ form.addEventListener('submit', event => {
   let currentDay = firstDelay;
 
   for (let i = 0; i <= amount; i++) {
-    createPromise(2, 1500)
+    createPromise(i + 1, firstDelay + delayStep * i)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
       })
